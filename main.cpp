@@ -1,9 +1,9 @@
 #include <iostream>
 #include <memory>
 #include <map>
-#include "EventManager.h"
+#include "eventManager.h"
 #include "Workshop.h"
-#include "Concert.h"
+#include "concert.h"
 
 int main() {
     EventManager manager;
