@@ -21,3 +21,33 @@ std::vector<Event*> EventManager::searchEvents(const std::string& criteria) cons
     }
     return {};
 }
+
+void EventManager::addFunderToEvent(const std::string& eventName, const std::string& funder) {
+    for (auto& event : events) {
+        if (event->getName() == eventName) {
+            event->addFunder(funder);
+            return;
+        }
+    }
+    std::cout << "Event not found.\n";
+}
+
+void EventManager::changeEventDay(const std::string& eventName, int newDay) {
+    for (auto& event : events) {
+        if (event->getName() == eventName) {
+            event->raincheck(newDay);
+            return;
+        }
+    }
+    std::cout << "Event not found.\n";
+}
+
+void EventManager::changeEventOrganizer(const std::string& eventName, const std::string& newOrganizer) {
+    for (auto& event : events) {
+        if (event->getName() == eventName) {
+            event->changeByPopDemand(newOrganizer);
+            return;
+        }
+    }
+    std::cout << "Event not found.\n";
+}
